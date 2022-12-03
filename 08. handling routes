@@ -53,5 +53,36 @@ Second Page
 -------------------------------------
 
 
+-------------------------------------
+
+
+Example-3:
+
+const express= require('express');
+const app= express();
+
+app.use('/second',(req,res,next)=>{ 
+    console.log('Middleware-2');
+    res.send('<h1>Second page</h1>')
+})
+
+app.use('/',(req,res,next)=>{ 
+    console.log('Middleware-1');
+    res.send('<h1>First page</h1>');
+})
+app.listen(3000);
+
+
+
+OUTPUT:
+On typing /second  and /third
+Middleware-2
+Common middleware
+Middleware-3
+Common middleware
+
+-------------------------------------
+
+
 
 
