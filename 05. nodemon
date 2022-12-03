@@ -1,0 +1,14 @@
+npm install nodemon --save-dev             //We need this nodemon only during development. Not during production.
+
+
+
+NODEMON:
+Nodemon is a tool which is widely used and which tracks changes and automatically restarts the application. 
+If we do not use Nodemon then after each change we have to stop the application and run it again.
+
+
+Check package.json file.
+In script field, type "start":"nodemon app.js" and save it.
+
+In Terminal, type npm start.
+So everytime when we save the code, it restarts.
