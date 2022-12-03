@@ -1,0 +1,23 @@
+next():
+The next() function is a function in the Express router that, when invoked, executes the next middleware in the middleware stack.
+
+Example:
+
+const express= require('express');
+const http= require('http');
+
+const app= express();
+app.use((req,res,next)=>{ 
+    console.log('Middleware-1');
+    next();
+})
+app.use((req,res,next)=>{ 
+    console.log('Middleware-2');
+    next();
+})
+app.use((req,res,next)=>{ 
+    console.log('Middleware-3');
+})
+
+const server=http.createServer(app);
+server.listen(3000);
