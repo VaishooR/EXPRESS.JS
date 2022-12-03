@@ -1,0 +1,32 @@
+res.send()
+ 
+It is an express method which is used to replace the 
+i) res.write() method and 
+ii) res.setHeader() method
+
+
+
+Example:
+
+const express= require('express');
+const http= require('http');
+
+const app= express();
+app.use((req,res,next)=>{ 
+    console.log('Middleware-1');
+    next();
+})
+app.use((req,res,next)=>{ 
+    console.log('Middleware-2');
+    next();
+})
+app.use((req,res,next)=>{ 
+    console.log('Middleware-3');
+    res.send({"name":"vaishoo"});
+})
+
+const server=http.createServer(app);
+server.listen(3000);
+
+
+--> Using send(), we dont have to set the header content-type, it automatically detects the content-type.
