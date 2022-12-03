@@ -11,3 +11,18 @@
                     Make changes to the request and the response objects.
                     End the request-response cycle.
                     Call the next middleware in the stack.
+
+
+
+Example:
+
+const express= require('express');
+const http= require('http');
+
+const app= express();
+app.use(()=>{ 
+    console.log('Express works...')
+})
+
+const server=http.createServer(app);
+server.listen(3000);
