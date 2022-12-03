@@ -1,0 +1,16 @@
+const express= require('express');
+const http= require('http');
+
+const app= express();
+
+
+const server=http.createServer(app);
+server.listen(3000);
+
+
+OUTPUT:
+Cannot GET /
+
+
+--> We have not given any response here. So the Express gives its own response. 
+--> Responses are given using app.use( ()=>{} ) function.
