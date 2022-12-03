@@ -1,4 +1,5 @@
---> app.use() is an expressjs function using which we can add middlewares.
+--> app.use() is an expressjs function using which we can add middlewares, used to send response and handle requests. 
+              if use() function is used, the express doesnot send its own response. It expects us to type the request.
 
 --> Middleware: It's a function that holds the request object, the response object, and the middleware function. 
                 It is the code that is used to handle the requests.
