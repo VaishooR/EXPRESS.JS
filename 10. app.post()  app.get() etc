@@ -1,0 +1,25 @@
+Instead of using app.use(), we can use app.get() app.post() for specific middlewares depending upon their operations.
+On using these specifically, it performs only that specified operation and not orher http methods.
+
+
+
+
+
+Example:
+
+const express= require('express');
+const app= express();
+const bodyParser=require('body-parser');
+
+app.use(bodyParser.urlencoded())
+
+app.get('/add-product',(req,res,next)=>{ 
+    res.send('<h1>Add Product</h1><form action="/store-product" method="POST"><input type="text" name="title"/><input type="submit" value="Submit"/></form>')
+})
+
+app.post('/store-product',(req,res,next)=>{ 
+    console.log('Form-data:',req.body);
+    res.send('<h1>Product submitted</h1>');
+    
+})
+app.listen(3000);
